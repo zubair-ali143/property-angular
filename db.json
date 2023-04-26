@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "Ptitle": "zubair ali",
+      "Pprice": "100000",
+      "Plocation": "shahdara",
+      "Pplot": "Availbility"
+    }
+  ],
+  "signup": [
+    {
+      "id": 1,
+      "name": "Zubair ali",
+      "email": "abc@gmail.com",
+      "phone": "12345678",
+      "password": "zubair123"
+
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
