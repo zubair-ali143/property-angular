@@ -2,20 +2,33 @@
   "properties": [
     {
       "id": 1,
-      "Ptitle": "zubair ali",
-      "Pprice": "100000",
-      "Plocation": "shahdara",
-      "Pplot": "Availbility"
+      "Ptitle": "kamran bhai",
+      "Pprice": "5000",
+      "Plocation": "lahore",
+      "Pdetail": "lahore joher town block#b"
+    },
+    {
+      "id": 2,
+      "Ptitle": "Zubair Ali",
+      "Pprice": "4000",
+      "Plocation": "Lahore",
+      "Pdetail": "shahdara town lahore"
+    },
+    {
+      "id": 3,
+      "Ptitle": "Umar Bhai",
+      "Pprice": "70000",
+      "Plocation": "Pindi",
+      "Pdetail": "Defense pindi block#b"
     }
   ],
   "signup": [
     {
-      "id": 1,
-      "name": "Zubair ali",
-      "email": "abc@gmail.com",
-      "phone": "12345678",
-      "password": "zubair123"
-
+      "name": "Zubair Ali",
+      "phone": 3104297342,
+      "email": "ali@gmail.com",
+      "password": "ali123@#",
+      "id": 1
     }
   ],
   "profile": {

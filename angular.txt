@@ -1,0 +1,16 @@
+
+/*******ANGULAR CLI 14*******/
+
+
+//IMPORTANT TOPICS//
+/***This Four METHOD To Complete Your CRUD***/
+GET METHOD => Get all data from your dataBase (Read data)
+POST METHOD => Create new value from user and add your DB (Create data)
+PUT METHOD => Update you value (Update data)
+DELETE METHOD => Delete your item from DB (Delete data)
+
+HTTPClent Module
+Reactive forms Module
+what is Model
+what id form Builder
+Module vs Component

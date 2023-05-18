@@ -1,1 +1,206 @@
-<p>properties works!</p>
+<!-- <app-nav-bar [username]="name" (childtoparent)="addprop($event)"></app-nav-bar> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="#">TC Properties</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link bg-danger text-white rounded mx-3"
+            routerLink="/login"
+            >Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid bg-light py-4 px-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h2>Testi Codeiz Properties</h2>
+        <p>You can Add Property data here for free</p>
+        <button class="btn btn-primary">Testy Codeiz</button>
+      </div>
+      <div class="col-lg-6">
+        <ul class="navbar-nav mb-2 mb-lg-0 justify-content-end">
+          <li class="nav-item">
+            <a
+              class="nav-link bg-success text-white rounded px-2"
+              aria-current="page"
+              href="#"
+              id="clear1"
+              data-bs-toggle="modal"
+              data-bs-target="#PropertyModal"
+              (click)="showaddListingbtn()"
+              >Add Listing</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Property Title</th>
+        <th scope="col">Property Price</th>
+        <th scope="col">Property Location</th>
+        <th scope="col">Property Detail</th>
+        <th scope="col">Property Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of allProperty; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ data.Ptitle }}</td>
+        <td>{{ data.Pprice | currency }}</td>
+        <td>{{ data.Plocation }}</td>
+        <td>{{ data.Pdetail }}</td>
+        <td>
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#PropertyModal"
+            (click)="showEditListingbtn(data)"
+          >
+            Edit
+          </button>
+          <button class="btn btn-success mx-1">View</button>
+          <button class="btn btn-danger" (click)="delItemproperty(data)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="PropertyModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Property Record Form</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="myForm">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Property Title Name</label
+            >
+            <input style="display: none;"
+              type="text"
+              [(ngModel)]="objEdit.id"
+              class="form-control"
+              formControlName="id"
+              aria-describedby="emailHelp"
+              placeholder="Enter ID"
+            />
+            <input
+              type="text"
+              [(ngModel)]="objEdit.Ptitle"
+              class="form-control"
+              formControlName="Ptitle"
+              aria-describedby="emailHelp"
+              placeholder="Enter Name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Property Price</label
+            >
+            <input
+              type="text"
+              [(ngModel)]="objEdit.Pprice"
+              class="form-control"
+              formControlName="Pprice"
+              placeholder="Enter Price"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Property Location</label
+            >
+            <input
+              type="text"
+              [(ngModel)]="objEdit.Plocation"
+              class="form-control"
+              formControlName="Plocation"
+              placeholder="Enter Location"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Property Detail</label
+            >
+            <input
+              type="text"
+              [(ngModel)]="objEdit.Pdetail"
+              class="form-control"
+              formControlName="Pdetail"
+              placeholder="Enter Detail"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          id="clear"
+        >
+          Clear
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          *ngIf="showAddbtn"
+          (click)="addprop()"
+        >
+          Add Listing
+        </button>
+        <button
+          type="button"
+          (click)="updatuser()"
+          class="btn btn-warning text-white"
+          *ngIf="showEditbtn"
+        >
+          Update Listing
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

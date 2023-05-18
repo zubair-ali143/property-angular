@@ -2,25 +2,28 @@
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="login-card">
-        <form style="border:1px solid black;" class="p-4">
+        <form  [formGroup]="signupForm" style="border:1px solid black;" class="p-4">
           <h1 class="text-center mb-3">SignUp Form</h1>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+            <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Phone</label>
-            <input type="number" class="form-control" id="number" aria-describedby="emailHelp">
+            <input type="number" formControlName="phone" class="form-control" id="number" aria-describedby="emailHelp">
           </div>
          <div class="mb-3">
            <label for="exampleInputEmail1" class="form-label">Email address</label>
-           <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+           <input type="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
          </div>
          <div class="mb-3">
            <label for="exampleInputPassword1" class="form-label">Password</label>
-           <input type="password" class="form-control" id="password">
+           <input type="password" formControlName="password" class="form-control" id="password">
          </div>
-         <button type="submit" class="btn btn-primary w-100">SignUp</button>
+         <button type="submit" class="btn btn-primary w-100" (click)="signUpfunction()">SignUp</button>
+         <div class="text-center mt-3">
+          <span>Already user? Click to <a routerLink="/signup" style="text-decoration:none;">Login</a></span>
+        </div>
        </form>
       </div>
     </div>
